@@ -5,11 +5,13 @@ from django.http import HttpResponse
 from django.core.mail import EmailMessage
 from django.template.loader import render_to_string
 from .forms import noticeForm, tableForm, notesForm
+from .models import *
 
 # Create your views here.
 
 
 def home(request):
+ 
     return render(request, 'system/index.html')
 
 
@@ -26,6 +28,8 @@ def note(request):
 
 
 def notesingle(request):
+    all_notes = models.notes.objects.all()
+    context = {'data', all_notes}
     return render(request, 'system/notesingle.html')
 
 
