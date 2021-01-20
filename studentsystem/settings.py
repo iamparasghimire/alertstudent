@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'alert.apps.AlertConfig',
-    'django_filters',
+    'notes.apps.NotesConfig',
+    'notice.apps.NoticeConfig',
+    'studenttable.apps.StudenttableConfig',
 ]
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 

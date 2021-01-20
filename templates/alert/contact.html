@@ -1,41 +1,35 @@
-{% extends 'alert/base.html' %}
+{% extends 'base.html' %}
 {% load static %}
 
 {% block body %}
    <div id="layoutSidenav_content">
-      
+	<div class="card card-body">
+      		<div class="card" style="width: 18rem;">
+                   	<div class="card card-body">
 
-<section class="s2">
+			  			<h3 style="text-align: center;">Get In Touch</h3>
 
-		<div class="container">
-		
-			<a href=""></a>
-			<h3 style="text-align: center;">Get In Touch</h3>
 
-			<form id="contact-form" method="POST" action="{% url 'contact' %}">
+<form id="contact-form" method="POST" action="">
 				{% csrf_token %}
 				<a name="contact"></a>
 
-				<label>Name:</label>
-         <br>
+				<label>Name</label>
 				<input required class="input-field" type="text" name="name">
-          <br>
-				<label>Subject:</label>
-         <br>
+
+				<label>Subject</label>
 				<input required class="input-field" type="text" name="subject">
-            <br>
-				<label>Email:</label>
-         <br>
+
+				<label>Email</label>
 				<input required class="input-field" type="text" name="email">
-             <br>
-				<label>Message:</label>
-         <br>
+
+				<label>Message</label>
 				<textarea required class="input-field" name="message"></textarea>
-          <br>
+
 				<input id="submit-btn" type="submit" value="Send">
-			</form>
-		</div>
-	</section> 
+</form>
+  </div>
+  </div>
   </div>
   </div>
 {% endblock body %}

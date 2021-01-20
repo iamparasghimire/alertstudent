@@ -1,0 +1,35 @@
+{% extends 'base.html' %} 
+{% load static %}
+ {% block head%} Dashboard{% endblock head%} 
+ {% block body %}
+   <div id="layoutSidenav_content">
+	<div class="card card-body">
+      	<div class="card" style="width: 18rem;">
+                   	<div class="card card-body">
+
+			  			<h3 style="text-align: center;">Get In Touch</h3>
+
+
+<form id="contact-form" method="POST" action="">
+				{% csrf_token %}
+				<a name="contact"></a>
+
+				<label>Description</label>
+			 {{ form.description }}
+
+				<label>Image</label>
+        {{ form.image }}
+
+				<label>Date</label>
+         {{ form.date }}
+
+     
+
+				<input id="submit-btn" type="submit" value="Send">
+</form>
+  </div>
+  </div>
+  </div>
+  
+  </div>
+        {% endblock body%}
