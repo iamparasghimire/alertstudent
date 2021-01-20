@@ -10398,14 +10398,3 @@ body {
 .sb-sidenav-light .sb-sidenav-footer {
     background-color: #e9ecef;
 }
-
-.s2 {
-    background-color: var(--secondaryColor);
-    border-bottom: 1px solid var(--borderColor);
-    overflow: auto;
-}
-
-.main-container {
-    width: 1200px;
-    margin: 0 auto;
-}

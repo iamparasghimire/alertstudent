@@ -13,6 +13,9 @@ from notes.forms import noteForm
 def note(request):
     return render(request, 'notes/note.html')
 
+def faculty(request):
+    return render(request, 'notes/faculty.html')
+
 
 def notesingle(request):
     all_note = models.note.objects.all()
