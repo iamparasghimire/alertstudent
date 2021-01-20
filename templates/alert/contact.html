@@ -1,0 +1,41 @@
+{% extends 'alert/base.html' %}
+{% load static %}
+
+{% block body %}
+   <div id="layoutSidenav_content">
+      
+
+<section class="s2">
+
+		<div class="container">
+		
+			<a href=""></a>
+			<h3 style="text-align: center;">Get In Touch</h3>
+
+			<form id="contact-form" method="POST" action="{% url 'contact' %}">
+				{% csrf_token %}
+				<a name="contact"></a>
+
+				<label>Name:</label>
+         <br>
+				<input required class="input-field" type="text" name="name">
+          <br>
+				<label>Subject:</label>
+         <br>
+				<input required class="input-field" type="text" name="subject">
+            <br>
+				<label>Email:</label>
+         <br>
+				<input required class="input-field" type="text" name="email">
+             <br>
+				<label>Message:</label>
+         <br>
+				<textarea required class="input-field" name="message"></textarea>
+          <br>
+				<input id="submit-btn" type="submit" value="Send">
+			</form>
+		</div>
+	</section> 
+  </div>
+  </div>
+{% endblock body %}

@@ -1,0 +1,42 @@
+{% extends 'alert/base.html' %} 
+{% load static %}
+ {% block head%} Dashboard{% endblock head%} 
+ {% block body%}
+
+          </br>
+
+      
+<div id="layoutSidenav_content">
+<div class="card-body">
+
+   			<h3 style="text-align: center;">Add Notice</h3>
+
+
+  <form action="" method="post">
+	{% csrf_token %}
+            <br>
+      <br>
+        {{ form.description.label }}:
+      <br>
+        {{ form.description }}
+      <br>
+      <br>
+        {{ form.image.label }}:
+      <br>
+        {{ form.image }}
+      <br>
+      <br>
+        {{ form.date.label }}:
+      <br>
+        {{ form.date }}
+      <br>
+      <br>
+     
+     
+	<input type="submit">
+	
+</form>
+
+  </div>
+  </div>
+        {% endblock body%}
