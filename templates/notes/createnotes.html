@@ -14,10 +14,11 @@
                                     <div class="card-header"><h3 class="text-center font-weight-light my-4">Create Notes</h3></div>
                                   
                                     <div class="card-body">
-                                        <form>
+                                        <form method="post" action="{% url 'createnote' %}">
+                                        {% csrf_token %}
                                               <div class="form-group">
                                                         <label  for="inputNumber">Semester</label>
-                                                        <input class="form-control py-4" id="inputNumber" name="number" type="number" placeholder="Enter your semester" />
+                                                        <input class="form-control py-4" id="inputNumber" name="semester" type="number" placeholder="Enter your semester" />
                                                 </div>
                                               <div class="form-group">
                                                         <label  for="inputFile">Notes</label>
@@ -25,18 +26,18 @@
                                                 </div>
                                           
                                             <div class="form-group">
-                                                <label for="inputEmail">Email</label>
-                                                <input class="form-control py-4" id="inputEmail" type="email" name="email" placeholder="Enter phone number" />
+                                                <label for="inputEmail">Title</label>
+                                                <input class="form-control py-4" id="inputText" type="text" name="title" placeholder="Enter Title" />
                                             </div>
                                              <div class="form-group">
-                                     <label for="exampleFormControlTextarea1">Message</label>
-                                    <textarea class="form-control" name="message" id="exampleFormControlTextarea1"  rows="3"></textarea>
+                                     <label for="exampleFormControlTextarea1">Description</label>
+                                    <textarea class="form-control" name="description" id="exampleFormControlTextarea1"  rows="3"></textarea>
                                          </div>
                                          
                                          
                                              <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
                                                
-                                                <a class="btn btn-primary" href="{% url 'login' %}">Send</a>
+                              <button type="submit" class="button button-contactForm boxed-btn">Send</button>
                                             </div>
                                         </form>
                                     </div>

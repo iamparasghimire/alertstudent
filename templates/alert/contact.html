@@ -13,19 +13,20 @@
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
                                     <div class="card-header"><h3 class="text-center font-weight-light my-4">Contact</h3></div>
                                     <div class="card-body">
-                                        <form>
+                                        <form method="post" action="{% url 'contact' %}" >
                                               <div class="form-group">
+                                                {% csrf_token %}
                                                         <label  for="inputLastName">Name</label>
                                                         <input class="form-control py-4" id="inputLastName" name="name" type="text" placeholder="Enter your name" />
                                                 </div>
                                               <div class="form-group">
-                                                        <label  for="inputLastName">Subject</label>
-                                                        <input class="form-control py-4" id="inputLastName"  name="subject" type="text" placeholder="Enter your name" />
+                                                        <label  for="inputSubject">Subject</label>
+                                                        <input class="form-control py-4" id="inputSubject"  name="subject" type="subject" placeholder="Enter your name" />
                                                 </div>
                                           
                                             <div class="form-group">
                                                 <label for="inputEmail">Email</label>
-                                                <input class="form-control py-4" id="inputEmail" type="email" name="email" placeholder="Enter phone number" />
+                                                <input class="form-control py-4" id="inputEmail" type="email" name="email" placeholder="Enter email number" />
                                             </div>
                                              <div class="form-group">
                                      <label for="exampleFormControlTextarea1">Message</label>
@@ -35,7 +36,7 @@
                                          
                                              <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
                                                
-                                                <a class="btn btn-primary" href="{% url 'login' %}">Send</a>
+                   <button type="submit" class="button button-contactForm boxed-btn">Send</button>
                                             </div>
                                         </form>
                                     </div>

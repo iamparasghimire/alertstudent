@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-class table(models.Model):
+class Table(models.Model):
     name = models.CharField(max_length=155, null=True, blank=True)
     faculty = models.CharField(max_length=155, null=True, blank=True)
     address1 = models.CharField(max_length=80, null=True, blank=True)

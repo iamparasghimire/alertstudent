@@ -6,8 +6,8 @@ class grade(models.Model):
     description = models.CharField(max_length=200, null=True, blank=True)
 
 
-class note(models.Model):
-    grade = models.IntegerField()
+class Note(models.Model):
+    semester = models.IntegerField()
     title = models.CharField(max_length=155)
     docfile = models.FileField()
     description = models.TextField(null=True, blank=True)
