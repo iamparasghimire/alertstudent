@@ -2,7 +2,6 @@ from django.shortcuts import render, redirect
 from . import models
 from django.http import HttpResponse
 
-from .forms import noticeForm
 
 # Create your views here.
 
@@ -24,11 +23,6 @@ def notice(request):
 
 
 def createnotice(request):
-    form = noticeForm()
-    if request.method == 'POST':
-        form = noticeForm(request.POST)
-        if form.is_valid():
-            form.save()
-    context = {'form': form}
-    return render(request, 'notice/createnotice.html', context)
+  
+    return render(request, 'notice/createnotice.html')
 

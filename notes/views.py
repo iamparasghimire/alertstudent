@@ -2,7 +2,6 @@ from django.shortcuts import render, redirect
 from . import models
 from django.http import HttpResponse
 
-from notes.forms import noteForm
 
 # Create your views here.
 
@@ -27,11 +26,7 @@ def notesingle(request):
 
 
 def createnote(request):
-    form = noteForm()
-    if request.method == 'POST':
-        form = noteForm(request.POST)
-        if form.is_valid():
-            form.save()
-    context = {'form': form}
+ 
+    context = {}
     return render(request, 'notes/createnotes.html', context)
 
