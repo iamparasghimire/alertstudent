@@ -10,4 +10,4 @@ class note(models.Model):
     sem = models.IntegerField()
     title = models.CharField(max_length=155)
     docfile = models.FileField()
-    description = models.CharField(max_length=2000,null=True, blank=True)
+    description = models.TextField(null=True, blank=True)
