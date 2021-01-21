@@ -32,8 +32,9 @@ class notice(models.Model):
         try:
             url = self.image.url
         except:
-            url=''
+            url = ''
         return url
+
 
 class contact(models.Model):
     name = models.CharField(max_length=50)
