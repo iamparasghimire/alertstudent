@@ -2,34 +2,54 @@
 {% load static %}
 
 {% block body %}
-   <div id="layoutSidenav_content">
-	<div class="card card-body">
-      		<div class="card" style="width: 18rem;">
-                   	<div class="card card-body">
-
-			  			<h3 style="text-align: center;">Get In Touch</h3>
-
-
-<form id="contact-form" method="POST" action="">
-				{% csrf_token %}
-				<a name="contact"></a>
-
-				<label>Name</label>
-				<input required class="input-field" type="text" name="name">
-
-				<label>Subject</label>
-				<input required class="input-field" type="text" name="subject">
-
-				<label>Email</label>
-				<input required class="input-field" type="text" name="email">
-
-				<label>Message</label>
-				<textarea required class="input-field" name="message"></textarea>
-
-				<input id="submit-btn" type="submit" value="Send">
-</form>
-  </div>
-  </div>
-  </div>
-  </div>
+<div id="layoutSidenav_content">
+    <body class="bg-primary">
+        <div id="layoutAuthentication">
+            <div id="layoutAuthentication_content">
+                <main>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-5">
+                                <div class="card shadow-lg border-0 rounded-lg mt-5">
+                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">Contact</h3></div>
+                                    <div class="card-body">
+                                        <form>
+                                              <div class="form-group">
+                                                        <label  for="inputLastName">Name</label>
+                                                        <input class="form-control py-4" id="inputLastName" name="name" type="text" placeholder="Enter your name" />
+                                                </div>
+                                              <div class="form-group">
+                                                        <label  for="inputLastName">Subject</label>
+                                                        <input class="form-control py-4" id="inputLastName"  name="subject" type="text" placeholder="Enter your name" />
+                                                </div>
+                                          
+                                            <div class="form-group">
+                                                <label for="inputEmail">Email</label>
+                                                <input class="form-control py-4" id="inputEmail" type="email" name="email" placeholder="Enter phone number" />
+                                            </div>
+                                             <div class="form-group">
+                                     <label for="exampleFormControlTextarea1">Message</label>
+                                    <textarea class="form-control" name="message" id="exampleFormControlTextarea1"  rows="3"></textarea>
+                                         </div>
+                                         
+                                         
+                                             <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
+                                               
+                                                <a class="btn btn-primary" href="{% url 'login' %}">Send</a>
+                                            </div>
+                                        </form>
+                                    </div>
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+            <div id="layoutAuthentication_footer">
+            
+            </div>
+        </div>
+        </div>
+       
 {% endblock body %}

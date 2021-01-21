@@ -7,7 +7,7 @@ class grade(models.Model):
 
 
 class note(models.Model):
-    sem = models.IntegerField()
+    grade = models.IntegerField()
     title = models.CharField(max_length=155)
     docfile = models.FileField()
     description = models.TextField(null=True, blank=True)

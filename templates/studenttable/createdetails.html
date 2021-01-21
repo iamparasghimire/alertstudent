@@ -12,55 +12,39 @@
                             <div class="col-lg-7">
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
                                     <div class="card-header"><h3 class="text-center font-weight-light my-4">Create Student Details</h3></div>
+                                    
                                     <div class="card-body">
                                         <form>
-                                            <div class="form-row">
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <label>Name</label>
-                                                        <br>
-                                                         {{ form.name }}
-                                                    </div>
+                                               <div class="form-group">
+                                                        <label  for="inputText">Name</label>
+                                                        <input class="form-control py-4" id="inputText" name="name" type="text" placeholder="Enter your name" />
                                                 </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                       <label>Faculty</label>
-                                                          <br>
-                                                        {{ form.faculty }}
-                                                    </div>
+                                               <div class="form-group">
+                                                        <label  for="inputText">Faculty</label>
+                                                        <input class="form-control py-4" id="inputText" name="faculty" type="text" placeholder="Enter your faculty" />
                                                 </div>
-                                            </div>
-                                            <div class="form-group">
-                                               <label>Temporary Address</label>
-                                                <br>
-                                                 {{ form.address1 }}
-                                            </div>
-                                            <div class="form-group">
-                                               <label>Permanent Address</label>
-                                               <br>
-                                                 {{ form.address2 }}
-                                            </div>
-                                            <div class="form-row">
-                                                 <div class="col-md-6">
-                                                    <div class="form-group">
-                                                         <label>Batch</label>
-                                                          <br>
-                                                       {{ form.batch }}
-                                                    </div>
+                                              
+                                               <div class="form-group">
+                                                        <label  for="inputText">Permanent Address</label>
+                                                        <input class="form-control py-4" id="inputText" name="address1" type="text" placeholder="Enter your permanent address" />
                                                 </div>
-                                                  <br>
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                         <label>Email</label>
-                                                           <br>
-                                                        {{ form.email }}
-                                                    </div>
+                                               <div class="form-group">
+                                                        <label  for="inputText">Temporary Address</label>
+                                                        <input class="form-control py-4" id="inputText" name="address2" type="text" placeholder="Enter your temporary address" />
                                                 </div>
+                                              
+                                            
+                                            
+                                         
+                                         
+                                             <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
+                                               
+                                                <a class="btn btn-primary" href="{% url 'login' %}">Send</a>
                                             </div>
-                                           <div class="form-group mt-4 mb-0"><a class="btn btn-primary btn-block" href="">Post</a></div>
                                         </form>
                                     </div>
                                    
+                                </div>
                                     </div>
                                 </div>
                             </div>
