@@ -3,7 +3,6 @@ from . import models
 from django.http import HttpResponse
 from .models import Note
 from django.contrib import messages
-
 # Create your views here.
 
 
@@ -11,15 +10,21 @@ from django.contrib import messages
 
 
 def note(request):
-    return render(request, 'notes/note.html')
+    all_semester = models.Semester.objects.all()
+    context = {'Semesters': all_semester}
+    return render(request, 'notes/note.html',context)
 
 def faculty(request):
-    return render(request, 'notes/faculty.html')
+    all_faculties = models.Faculty.objects.all(faculty=pk)
+    notes = all_faculties.notes_set.all()
+    context = {'faculties': all_faculties}
+    return render(request, 'notes/faculty.html',context)
 
 
 def notesingle(request):
-    all_note = models.Note.objects.all()
-    context = {'data': all_note}
+    all_notes = models.Note.objects.all()
+    context = {'data': all_notes}
+
     return render(request, 'notes/notesingle.html',context)
 
 
@@ -29,15 +34,16 @@ def notesingle(request):
 def createnote(request):
     if request.method=='POST':
         semester = request.POST['semester']
-        title = request.POST['title']
+        faculty= request.POST['faculty']
+        subject = request.POST['subject']
         docfile = request.POST['file']
         description = request.POST['description']
-        print(semester, title,docfile,description)
+        print(semester, faculty,subject,docfile,description)
 
-        if len(title)<3 or len(description)<5 :
+        if len(subject)<1 or len(description)<5 :
             messages.error(request, "Please fill the form correctly")
         else:
-            note = Note(semester=semester, title=title,description=description,docfile=docfile)
+            note = Note(semester=semester,faculty=faculty, subject=subject,docfile=docfile,description=description)
             note.save()
             messages.success(request, "Your message has been successfully sent")
  

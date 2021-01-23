@@ -5,5 +5,6 @@ from .models import *
 
 
 admin.site.register(Note)
-admin.site.register(grade)
+admin.site.register(Faculty)
+admin.site.register(Semester)
 

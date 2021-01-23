@@ -17,8 +17,12 @@
                                         <form method="post" action="{% url 'createnote' %}">
                                         {% csrf_token %}
                                               <div class="form-group">
-                                                        <label  for="inputNumber">Semester</label>
-                                                        <input class="form-control py-4" id="inputNumber" name="semester" type="number" placeholder="Enter your semester" />
+                                                        <label  for="inputText">Semester</label>
+                                                        <input class="form-control py-4" id="inputText" name="semester" type="text" placeholder="Enter your semester" />
+                                                </div>
+                                              <div class="form-group">
+                                                        <label  for="inputText">Faculty</label>
+                                                        <input class="form-control py-4" id="inputText" name="faculty" type="text" placeholder="Enter your faculty" />
                                                 </div>
                                               <div class="form-group">
                                                         <label  for="inputFile">Notes</label>
@@ -26,8 +30,8 @@
                                                 </div>
                                           
                                             <div class="form-group">
-                                                <label for="inputEmail">Title</label>
-                                                <input class="form-control py-4" id="inputText" type="text" name="title" placeholder="Enter Title" />
+                                                <label for="inputEmail">Subject</label>
+                                                <input class="form-control py-4" id="inputText" type="text" name="subject" placeholder="Enter subject" />
                                             </div>
                                              <div class="form-group">
                                      <label for="exampleFormControlTextarea1">Description</label>
