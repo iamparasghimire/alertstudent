@@ -22,7 +22,26 @@
                                                 </div>
                                                <div class="form-group">
                                                         <label  for="inputText">Faculty</label>
-                                                        <input class="form-control py-4" id="inputText" name="faculty" type="text" placeholder="Enter your faculty" />
+                                                        <select class="custom-select" id="inputText" name="faculty" />
+                                                            {% for fac in faculty%}  
+                                                                <option value="{{fac.id}}">{{fac.name}}</option>
+                                                            {% endfor %}
+                                                        </select>
+                                                </div>
+
+                                                <div class="form-group">
+                                                        <label  for="inputText">Semester</label>
+                                                        <select class="custom-select" id="inputText" name="semester" />
+                                                                <option value="" selected>Select Semester</option>
+                                                                <option value="1">First</option>
+                                                                <option value="2">Second</option>
+                                                                <option value="3">Third</option>
+                                                                <option value="4">fourth</option>
+                                                                <option value="5">Fifth</option>
+                                                                <option value="6">Sixth</option>
+                                                                <option value="7">Seventh</option>
+                                                                <option value="8">Eigth</option>
+                                                        </select>
                                                 </div>
                                               
                                                <div class="form-group">
