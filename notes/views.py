@@ -10,7 +10,7 @@ from django.contrib import messages
 
 
 def note(request):
-    all_notes = models.filter(Note=semester)
+    all_notes = models.Note.objects.all()
     context = {'data': all_notes}
     return render(request, 'notes/note.html',context)
 
