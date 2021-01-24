@@ -10,12 +10,12 @@ from django.contrib import messages
 
 
 def note(request):
-    all_semester = models.Semester.objects.all()
-    context = {'Semesters': all_semester}
+    all_notes = models.Note.objects.all()
+    context = {'data': all_notes}
     return render(request, 'notes/note.html',context)
 
 def faculty(request):
-    all_faculties = models.Faculty.objects.all(faculty=pk)
+    all_faculties = models.Faculty.objects.all()
     notes = all_faculties.notes_set.all()
     context = {'faculties': all_faculties}
     return render(request, 'notes/faculty.html',context)
