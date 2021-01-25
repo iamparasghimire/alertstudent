@@ -1,3 +1,11 @@
 .env
 __pycache__/
 studenttable/__pycache__/
+alert/__pycache__/
+alert/migrations/
+notes/__pycache__/
+notes/migrations/
+notice/__pycache__/
+studentalert/__pycache__/
+studenttable/__pycache__/
+studenttable/migrations/
