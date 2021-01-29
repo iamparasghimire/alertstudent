@@ -4,7 +4,7 @@ from .import views
 
 urlpatterns = [
 
-    path('table/', views.table, name='table'),
+    path('', views.table, name='table'),
 
     path('createtable/', views.createtable, name='createtable'),
 

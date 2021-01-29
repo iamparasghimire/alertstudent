@@ -1,15 +1,9 @@
 from django.shortcuts import render, redirect
-from . import models
 from django.http import HttpResponse
 from .models import Notice
 from django.contrib import messages
-
-# Create your views here.
-
-
-
-
-
+from .forms import NoticeForm
+from . import models
 
 
 def notice(request):
@@ -18,24 +12,16 @@ def notice(request):
     return render(request, 'notice/notice.html',context)
 
 
-
-
-
-
-
 def createnotice(request):
-    if request.method=='POST':
-        description = request.POST['description']
-        image = request.POST['image']
-        date = request.POST['date']
-        print(description, image,date)
+    form = NoticeForm()
+    if request.method =='POST':
+        form = NoticeForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('/notice/')
+            return HttpResponse('Thank you')
+            messages.add_message(request, messages.INFO, 'Hello world.')
 
-        if len(description)<2 :
-            messages.error(request, "Please fill the form correctly")
-        else:
-            notice = Notice(description=description, image=image,date=date)
-            notice.save()
-            messages.success(request, "Your message has been successfully sent")
-  
-    return render(request, 'notice/createnotice.html')
+    context = {'form':form}
+    return render(request, 'notice/createnotice.html',context)
 
