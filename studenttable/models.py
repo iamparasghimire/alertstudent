@@ -17,7 +17,12 @@ class Table(models.Model):
         ('8', 'Eighth'),
     }
     semester = models.CharField(max_length=200, choices=STATUS)
+<<<<<<< HEAD
     permanent = models.CharField(max_length=80, null=True, blank=True)
     phone = models.CharField(max_length=80, null=True, blank=True)
+=======
+    address1 = models.CharField(max_length=80, null=True, blank=True)
+    address2 = models.CharField(max_length=80, null=True, blank=True)
+>>>>>>> 474657f845c5d4d813fd4a44ea1c84e487025b07
     batch = models.CharField(max_length=85, null=True, blank=True)
     email = models.EmailField(max_length=254, null=True, blank=True)
