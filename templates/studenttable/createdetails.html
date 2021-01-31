@@ -1,16 +1,65 @@
-{% extends 'base.html' %} 
+{% extends 'base.html' %}
 {% load static %}
- {% block head%} Dashboard{% endblock head%} 
- {% block body %}
-   <div id="layoutSidenav_content">
-  <div class="card-body">
-          <form method="POST" action="">
-               {% csrf_token %} 
-               <table> 
-                    {{ form.as_table }} 
-               </table> 
-               <input type="submit"  value="Submit"> 
-           </form>
-  </div>
-  </div>
-        {% endblock body%}
+{% block head%} Dashboard{% endblock head%}
+{% block body %}
+
+<div id="layoutSidenav_content">
+     <main>
+          <div class="container-fluid">
+               <h1 class="mt-4">Student Panel.</h1>
+               <div class="card mb-4">
+                    <div class="card-header">
+                         <i class="fas fa-table mr-1"></i>
+                         Add Student
+                    </div>
+                         <div class="card-body">
+                              <form method="POST" action="">
+                                   {% csrf_token %}
+                                   {{ form.non_field_errors }}
+                                   <div class="form-group">
+                                        {{ form.name.errors }}
+                                        <label for="{{ form.name.id_for_label }}">Name:</label>
+                                        {{ form.name }}
+                                   </div>
+                                   <div class="form-group">
+                                        {{ form.faculty.errors }}
+                                        <label for="{{ form.faculty.id_for_label }}">Faculty:</label>
+                                        {{ form.faculty }}
+                                   </div>
+                                   <div class="form-group">
+                                        {{ form.semester.errors }}
+                                        <label for="{{ form.semester.id_for_label }}">Semester :</label>
+                                        {{ form.semester }}
+                                   </div>
+                                   <div class="form-group">
+                                        {{ form.permanent.errors }}
+                                        <label for="{{ form.permanent.id_for_label }}">Permanent : </label>
+                                        {{ form.permanent }}
+                                   </div>
+                                   <div class="form-group">
+                                        {{ form.phone.errors }}
+                                        <label for="{{ form.phone.id_for_label }}">Phone : </label>
+                                        {{ form.phone }}
+                                   </div>
+                                   <div class="form-group">
+                                        {{ form.batch.errors }}
+                                        <label for="{{ form.batch.id_for_label }}">Batch : </label>
+                                        {{ form.batch }}
+                                   </div>
+                                   <div class="form-group">
+                                        {{ form.email.errors }}
+                                        <label for="{{ form.email.id_for_label }}">Email : </label>
+                                        {{ form.email}}
+                                   </div>
+                                   {% if form.email.value is None %}
+                                   <input class="btn btn-primary" type="submit" value="Submit">
+                                   {% else %}
+                                   <input class="btn btn-primary" type="submit" value="Update">
+                                   {% endif %}
+                              </form>
+                         </div>
+               </div>
+          </div>
+     </main>
+</div>
+{% endblock body%}

@@ -6,7 +6,6 @@
                 <main>
                     <div class="container-fluid">
                         <h1 class="mt-4">Tables</h1>
-                        
                         {% if messages %}
                             {% for message in messages %}
                             <div class="alert alert-success" role="alert">
@@ -15,10 +14,6 @@
                                </div>
                             {% endfor %}
                         {% endif %}
-
-
-
-                     
                         <div class="card mb-4">
                             <div class="card-header">
                                 <i class="fas fa-table mr-1"></i>
@@ -35,6 +30,7 @@
                                                 <th>Phone Number</th>
                                                 <th>Batch</th>
                                                 <th>Email</th>
+                                                <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tfoot>
@@ -45,6 +41,7 @@
                                                 <th>Phone Number</th>
                                                 <th>Batch</th>
                                                 <th>Email</th>
+                                                <th>Action</th>
                                             </tr>
                                         </tfoot>
                                         <tbody>
@@ -57,6 +54,9 @@
                                                 <td>{{table.phone}}</td>
                                                 <td>{{table.batch}}</td>
                                                 <td>{{table.email}}</td>
+                                                <th><a class="btn btn-primary" href="/studenttable/edit/{{table.id}}/" role="button">Edit</a>
+                                                    <a class="btn btn-danger" href="/studenttable/delete/{{table.id}}/" role="button">Delete</a>
+                                                </th>
                                               
                                             </tr>
 
