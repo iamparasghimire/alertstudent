@@ -17,7 +17,7 @@ def createtable(request):
         form = TableForm(request.POST)
         if form.is_valid():
             form.save()
+            messages.success(request, 'Student Details has been saved.')
             return redirect('/studenttable/')
     context = {'form':form}
-
     return render(request, 'studenttable/createdetails.html',context)
