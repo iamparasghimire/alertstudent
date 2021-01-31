@@ -3,7 +3,6 @@
  {% block head%} Dashboard{% endblock head%} 
  {% block body %}
    <div id="layoutSidenav_content">
-<<<<<<< HEAD
   <div class="card-body">
           <form method="POST" action="">
                {% csrf_token %} 
@@ -13,88 +12,5 @@
                <input type="submit"  value="Submit"> 
            </form>
   </div>
-=======
-      <body class="bg-primary">
-        <div id="layoutAuthentication">
-            <div id="layoutAuthentication_content">
-                <main>
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-7">
-                                <div class="card shadow-lg border-0 rounded-lg mt-5">
-                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">Create Student Details</h3></div>
-                                    
-                                    <div class="card-body">
-                                        <form method="post" action="{% url 'createtable' %}">
-                                        {% csrf_token %}
-                                               <div class="form-group">
-                                                        <label  for="inputText">Name</label>
-                                                        <input class="form-control py-4" id="name" name="name" type="text" placeholder="Enter your name" />
-                                                </div>
-                                               <div class="form-group">
-                                                        <label  for="inputText">Faculty</label>
-                                                        <select class="custom-select" id="faculty" name="faculty" />
-                                                            {% for fac in faculty%}
-                                                                <option value="{{fac.id}}">{{fac.name}}</option>
-                                                            {% endfor %}
-                                                        </select>
-                                                </div>
-
-                                                <div class="form-group">
-                                                        <label  for="inputText">Semester</label>
-                                                        <select class="custom-select" id="semester" name="semester" />
-                                                                <option value="" selected>Select Semester</option>
-                                                                <option value="1">First</option>
-                                                                <option value="2">Second</option>
-                                                                <option value="3">Third</option>
-                                                                <option value="4">fourth</option>
-                                                                <option value="5">Fifth</option>
-                                                                <option value="6">Sixth</option>
-                                                                <option value="7">Seventh</option>
-                                                                <option value="8">Eigth</option>
-                                                        </select>
-                                                </div>
-                                              
-                                               <div class="form-group">
-                                                        <label  for="inputText">Permanent Address</label>
-                                                        <input class="form-control py-4" id="address1" name="address1" type="text" placeholder="Enter your permanent address" />
-                                                </div>
-                                               <div class="form-group">
-                                                        <label  for="inputText">Temporary Address</label>
-                                                        <input class="form-control py-4" id="address2" name="address2" type="text" placeholder="Enter your temporary address" />
-                                                </div>
-                                              
-                                               <div class="form-group">
-                                                        <label  for="inputText">Batch</label>
-                                                        <input class="form-control py-4" id="batch" name="batch" type="text" placeholder="Enter your batch year" />
-                                                </div>
-                                              
-                                               <div class="form-group">
-                                                        <label  for="inputText">Email</label>
-                                                        <input class="form-control py-4" id="email" name="email" type="email" placeholder="Enter your email" />
-                                                </div>
-                                              
-                                            
-                                            
-                                         
-                                         
-                                             <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
-                                               
-                                                <button type="submit" class="button button-contactForm boxed-btn">Send</button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                   
-                                </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </main>
-            </div>
-        
-        </div>
->>>>>>> 474657f845c5d4d813fd4a44ea1c84e487025b07
   </div>
         {% endblock body%}
